@@ -11,6 +11,9 @@ public class NodeCreatorForm extends CSSLoader {
 	String style="";
 	String href="";
 	String type="";
+	protected String hxTrigger="";
+	protected String hxGet = "";
+	protected String hxTarget = "";
 	String placeholder="";
 	String label="";
 	String name="";
@@ -18,10 +21,10 @@ public class NodeCreatorForm extends CSSLoader {
 	String value="";
 	String action="";
 	public String createNode() {
-		return "<"+this.Tag+placeholder+id+classStyle+style+type+name+value+action+" />";
+		return "<"+this.Tag+placeholder+hxGet+hxTarget+hxTrigger+id+classStyle+style+type+name+value+action+" />";
 	}
 	public String createPairNode(){
-		return "<"+this.Tag+placeholder+id+classStyle+style+type+name+value+action+" >"+ this.content + "</"+this.Tag+">";
+		return "<"+this.Tag+placeholder+hxGet+hxTarget+hxTrigger+id+classStyle+style+type+name+value+action+" >"+ this.content + "</"+this.Tag+">";
 	}
 	public void setType(String type) {
 		this.type=" type="+type;
@@ -33,7 +36,7 @@ public class NodeCreatorForm extends CSSLoader {
 		this.name=" name="+name;
 	}
 	public void setId(String name) {
-		this.name=" id ="+name;
+		this.id=" id ="+name;
 	}
 	public void setContent(String content) {
 		this.content=content;
@@ -48,6 +51,10 @@ public class NodeCreatorForm extends CSSLoader {
 		this.placeholder=" placeholder="+place;
 		
 	}
+	public void setHxTrigger(String triggerCondition) {
+		this.hxTrigger = " hx-trigger = "+triggerCondition;
+	}
+
 	public void setClass(String styleClass) {
 		this.classStyle=" class='"+styleClass+"' ";
 	}
@@ -59,6 +66,12 @@ public class NodeCreatorForm extends CSSLoader {
 	}
 	public void setAction(String action) {
 		this.action=" action="+action;
+	}
+	public void setHxGet(String url) {
+		this.hxGet = " hx-get = "+url;
+	}
+	public void setHxTarget(String target) {
+		this.hxTarget = " hx-target = "+target;
 	}
 	public String getValue() {
 		return this.value;

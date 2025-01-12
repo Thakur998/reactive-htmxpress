@@ -15,7 +15,7 @@ public class InlineApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(InlineApplication.class, args);
-		openHomePage();
+		//openHomePage();
 	}
 
 	private static void openHomePage()

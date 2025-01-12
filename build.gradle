@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 	implementation 'io.projectreactor:reactor-core:3.6.11'
 	implementation 'com.google.guava:guava:33.4.0-jre'
+	implementation 'org.springframework.hateoas:spring-hateoas'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

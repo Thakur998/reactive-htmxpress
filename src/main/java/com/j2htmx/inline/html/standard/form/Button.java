@@ -6,9 +6,16 @@ import com.j2htmx.inline.html.nodes.NodeCreator;
 public class Button extends NodeCreator {
 	String disable = "";
 	String areaLabel = "";
-	@Override
+	String onclick = "";
+	String hxSwap = "";
+
+    public Button() {
+		setTag("button");
+    }
+
+    @Override
 	public String createPairNode(){
-		return "<"+this.Tag+classStyle+style+id+width+height+hxGet+hxInclude+hxTarget+hxTrigger+disable+areaLabel+" >"+ this.content   + "</"+this.Tag+">";
+		return "<"+this.Tag+classStyle+style+name+hxSwap+hxOutOfOrderSwap+onclick+id+width+height+hxGet+hxVals+hxInclude+hxTarget+hxTrigger+disable+areaLabel+" >"+ this.content   + "</"+this.Tag+">";
 	}
 
 	public void toggleButtonDisable() {
@@ -31,6 +38,14 @@ public class Button extends NodeCreator {
 		setHxGet(hxPost);
 		setHxTarget(hxTarget);
 		setTag("button");
+	}
+
+	public void setOnclick(String jsFunction) {
+		this.onclick = " onclick = " + jsFunction;
+	}
+
+	public void setHxSwap(String swap) {
+		this.hxSwap = " hx-swap = " + swap;
 	}
 
 	public void setAreaLabel(String areaLabel) {
